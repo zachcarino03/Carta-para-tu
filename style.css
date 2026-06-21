@@ -106,8 +106,9 @@ html, body {
 .book-wrap {
   position: relative;
   perspective: 2400px;
-  width: min(94vw, 740px);
-  height: min(74vh, 480px);
+  width: min(92vw, 620px);
+  aspect-ratio: 3 / 2;
+  max-height: 78vh;
 }
 
 .spine-shadow {
