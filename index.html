@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>For Dad</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="room">
+
+    <!-- ============ COVER SCREEN ============ -->
+    <div class="cover-screen" id="coverScreen">
+      <div class="ribbon"></div>
+      <div class="cover-card" id="openCoverBtn">
+        <div class="cover-inner">
+          <span class="cover-heart">💙</span>
+          <h1 class="cover-title">Feliz Día del<br>Padre, Papá</h1>
+          <p class="cover-sub">un pequeño libro de nosotros</p>
+          <p class="cover-doodles">✈️ 🐌 🍝 💙</p>
+          <p class="cover-hint">pica para comenzar →</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ BOOK SCREEN (two-page spread) ============ -->
+    <div class="book-screen hidden" id="bookScreen">
+      <div class="book-wrap">
+        <div class="spine-shadow"></div>
+
+        <!-- static base — always sits beneath everything in the left slot -->
+        <div class="static-left-page page" id="leftBase">
+          <div class="page-content">
+            <span class="doodle">💌</span>
+            <h2 class="page-heading">Querido Papá,</h2>
+            <p class="letter-text">
+              Este año te quiero dar algo que no solo vayas a leer una vez y luego olvidar, así que
+              te hice un libro que contiene unas de las pocas, tontas y memorias específicas que hemos
+              vivido que solo podemos entre nosotros entender!! (Y todo esto también gracias a un amigo
+              que es muy bueno en coding)
+            </p>
+          </div>
+          <span class="page-num">01</span>
+        </div>
+
+        <!-- LEAF 0 — photo / Caraculito -->
+        <div class="leaf" id="leaf0" style="z-index:5">
+          <div class="face front page photo-page">
+            <div class="polaroid">
+              <span class="tape"></span>
+              <img src="father's-day-photos-hanna/IMG_0690.JPG" alt="Me and my baby brother" />
+            </div>
+            <span class="page-num">02</span>
+          </div>
+          <div class="face back page">
+            <div class="page-content">
+              <span class="doodle">🐌</span>
+              <h2 class="page-heading">Caraculito 🐌</h2>
+              <p class="letter-text">
+                En Da Nang que estaba tan cansada en la noche y pasamos por un caracol en el pasto y de
+                verdad creí que la palabra en español era <em>Caraculito</em> 😹, fue una tontería pero
+                aún recuerdo cuánto nos hizo reír a todos, y aún después de tanto tiempo aún llamamos a
+                los caracoles así entre tú y yo si pasamos por uno.
+              </p>
+            </div>
+            <span class="page-num">03</span>
+          </div>
+        </div>
+
+        <!-- LEAF 1 — photo / Tabla de pastas -->
+        <div class="leaf" id="leaf1" style="z-index:4">
+          <div class="face front page photo-page">
+            <div class="polaroid">
+              <span class="tape"></span>
+              <img src="father's-day-photos-hanna/IMG_0691.JPG" alt="Dad and me on the beach" />
+            </div>
+            <span class="page-num">04</span>
+          </div>
+          <div class="face back page">
+            <div class="page-content">
+              <span class="doodle">🍽️</span>
+              <h2 class="page-heading">Convos de 3 horas</h2>
+              <p class="letter-text">
+                Hablando por tres horas después de cenar. Cada que los dos nos vemos en la cocina para
+                comer nunca falta la conversación pequeña que termina durando horas, entre anécdotas,
+                consejos, chisme, o cuán menso está el trump. Siempre tenemos algo de lo que hablar, y
+                esos siempre los voy a considerar como mis mejores memorias contigo, es donde más
+                aprendo y conecto contigo, el poder conocer tu pasado y aprender de él es lo mejor y
+                ojalá y lo sigamos haciendo en un futuro.
+              </p>
+            </div>
+            <span class="page-num">05</span>
+          </div>
+        </div>
+
+        <!-- LEAF 2 — photo / Tabla de pastas -->
+        <div class="leaf" id="leaf2" style="z-index:3">
+          <div class="face front page photo-page">
+            <div class="polaroid">
+              <span class="tape"></span>
+              <img src="father's-day-photos-hanna/IMG_0693.JPG" alt="Dad and me on the beach in hats" />
+            </div>
+            <span class="page-num">06</span>
+          </div>
+          <div class="face back page">
+            <div class="page-content">
+              <span class="doodle">🤸</span>
+              <h2 class="page-heading">Fake Drop</h2>
+              <p class="letter-text">
+                La foto no está relacionada pero se me hizo graciosa jajaj, aún me acuerdo cuando
+                estábamos afuera de una tienda después de comprar mi celular (el ZTE) y estábamos
+                jugando el free fall, y estábamos jugando y diciendo que me ibas a soltar y en una de
+                esas no me cachaste a tiempo y me terminé cayendo cara abajo en el suelo 😭 fue muy
+                divertido y me acuerdo cómo se rio mamá jajajja
+              </p>
+            </div>
+            <span class="page-num">07</span>
+          </div>
+        </div>
+
+        <!-- LEAF 3 — photo / Tabla de pastas -->
+        <div class="leaf" id="leaf3" style="z-index:2">
+          <div class="face front page photo-page">
+            <div class="polaroid">
+              <span class="tape"></span>
+              <img src="father's-day-photos-hanna/IMG_0696.JPG" alt="Close up of dad, me, and mom" />
+            </div>
+            <span class="page-num">08</span>
+          </div>
+          <div class="face back page">
+            <div class="page-content">
+              <span class="doodle">💙</span>
+              <h2 class="page-heading">Así que, Papá...</h2>
+              <p class="letter-text">
+                Gracias por todas las bromas, por cada cena que duró más de lo que debía, y todas las
+                veces en las que estuviste presente y me demostraste lo increíble que es tenerte como
+                mi papá. Todo esto lo recordaré cuando esté vieja y llena de canas, contándole a mis
+                hijos sobre ti! Te quiero mucho más de lo que una carta puede demostrar, pero esto es
+                lo mejor que pude hacer. Gracias por todo lo que haces por nosotros, yo sé que te
+                esfuerzas cada día! Y créeme que lo apreciamos, eres el mejor papá que una niña pudo
+                haber pedido.
+              </p>
+              <p class="signoff">Con cariño, Hanna 💙</p>
+            </div>
+            <span class="page-num">09</span>
+          </div>
+        </div>
+
+        <!-- LEAF 4 — final collage, front-only -->
+        <div class="leaf" id="leaf4" style="z-index:0">
+          <div class="face front page collage-page">
+            <h2 class="page-heading center">The End... for now</h2>
+            <div class="collage">
+              <img class="collage-photo c1" src="father's-day-photos-hanna/IMG_0694.JPG" alt="Dad helping a toddler walk on the beach" />
+              <img class="collage-photo c2" src="father's-day-photos-hanna/IMG_0695.JPG" alt="The whole family on the beach" />
+            </div>
+            <p class="cover-sub center">Happy Father's Day 💙<br>Feliz Día del Padre, Papá</p>
+            <span class="page-num">10</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="controls">
+        <button id="prevBtn" class="nav-btn" aria-label="Previous page">←</button>
+        <span class="page-indicator" id="pageIndicator">p. 01–02</span>
+        <button id="nextBtn" class="nav-btn" aria-label="Next page">→</button>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
