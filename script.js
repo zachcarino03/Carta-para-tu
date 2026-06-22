@@ -1,8 +1,10 @@
 const coverScreen = document.getElementById('coverScreen');
 const bookScreen = document.getElementById('bookScreen');
 const openCoverBtn = document.getElementById('openCoverBtn');
+const leftBase = document.getElementById('leftBase');
 
-const leaves = Array.from(document.querySelectorAll('.leaf')).slice(0, 4); // leaf0..leaf3 are flippable
+const allLeaves = Array.from(document.querySelectorAll('.leaf'));
+const leaves = allLeaves.slice(0, 4); // leaf0..leaf3 are flippable, leaf4 (collage) is front-only
 const total = leaves.length; // 4
 
 let current = 0; // number of leaves flipped so far
@@ -13,9 +15,23 @@ const indicator = document.getElementById('pageIndicator');
 
 const labels = ['p. 01–02', 'p. 03–04', 'p. 05–06', 'p. 07–08', 'p. 09–10'];
 
+// On mobile the spread is stacked (no 3D flip — see the @media block in
+// style.css), so instead of relying on the flip transform we just show
+// the current left/right page directly and hide everything else.
+function syncMobileView() {
+  document.querySelectorAll('.face').forEach((face) => face.classList.add('mobile-inactive'));
+  leftBase.classList.add('mobile-inactive');
+
+  const leftEl = current === 0 ? leftBase : allLeaves[current - 1].querySelector('.face.back');
+  const rightEl = allLeaves[current].querySelector('.face.front');
+  leftEl.classList.remove('mobile-inactive');
+  rightEl.classList.remove('mobile-inactive');
+}
+
 function updateUI() {
   nextBtn.disabled = current === total;
   indicator.textContent = labels[current] || '';
+  syncMobileView();
 }
 
 function openCover() {

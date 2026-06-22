@@ -42,41 +42,6 @@ html, body {
 }
 .hidden { display: none !important; }
 
-/* ============ ROTATE PROMPT (mobile portrait) ============ */
-.rotate-prompt {
-  display: none;
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 18px;
-  background: radial-gradient(ellipse at 50% 0%, #fff7ec 0%, #f3dfc4 55%, #e7c79e 100%);
-  text-align: center;
-  padding: 24px;
-}
-.rotate-icon {
-  font-size: 64px;
-  display: inline-block;
-  animation: rotateHint 1.6s ease-in-out infinite;
-}
-@keyframes rotateHint {
-  0%, 100% { transform: rotate(0deg); }
-  50% { transform: rotate(90deg); }
-}
-.rotate-prompt p {
-  font-family: 'Caveat', cursive;
-  font-size: 24px;
-  color: var(--ink);
-  max-width: 280px;
-  margin: 0;
-}
-
-@media (orientation: portrait) and (max-width: 900px) {
-  .room { display: none; }
-  .rotate-prompt { display: flex; }
-}
 
 /* ============ COVER SCREEN ============ */
 .cover-screen {
@@ -352,4 +317,48 @@ html, body {
   color: var(--ink-soft);
   min-width: 90px;
   text-align: center;
+}
+
+/* ============ MOBILE: STACK PAGES INSTEAD OF SIDE-BY-SIDE ============
+   A fixed-height two-page spread needs generous width AND height at the
+   same time, which no phone orientation provides. Below this breakpoint,
+   drop the 3D flip entirely and just show the current left/right page
+   stacked full-width, one above the other, sized to their content. */
+@media (max-width: 900px) {
+  .book-wrap {
+    position: static;
+    perspective: none;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .spine-shadow { display: none; }
+
+  .static-left-page,
+  .leaf {
+    position: static;
+    width: 100%;
+    height: auto;
+    transform: none !important;
+    transition: none;
+  }
+
+  .face {
+    position: static;
+    inset: auto;
+    backface-visibility: visible;
+    transform: none !important;
+    width: 100%;
+    max-width: 460px;
+    margin: 0 auto;
+    min-height: 220px;
+    border-radius: 16px !important;
+    box-shadow: 0 10px 26px rgba(20,40,80,0.14) !important;
+  }
+  .face.mobile-inactive { display: none; }
+
+  .photo-page { min-height: 0; }
+  .polaroid { flex: none; width: min(100%, 320px); margin: 0 auto; aspect-ratio: 3 / 4; }
 }
